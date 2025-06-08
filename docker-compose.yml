@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: 142536
+      MYSQL_DATABASE: nodejs
+    networks:
+      - nodenet
+    ports:
+      - "3306:3306"
+
+  app:
+    build: .
+    container_name: app
+    depends_on:
+      - db
+    networks:
+      - nodenet
+
+  web:
+    image: nginx:latest
+    container_name: web
+    depends_on:
+      - app
+      - db
+    networks:
+      - nodenet
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+networks:
+  nodenet:
+    driver: bridge
