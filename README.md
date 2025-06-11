@@ -46,10 +46,11 @@ app  | Conexão com o banco de dados estabelecida com sucesso!
 - 2 - Foi instalado a lib `Nodemon` no npm e configurado no dockerfile  CMD `npm run dev`, para atualização em tempo real, `no caso com F5 no navegador.`
 
 ``` json 
+// in package.json
+
 "scripts": {
   "start": "node index.js",
-  "dev": "nodemon --legacy-watch index.js", // indicado windows / wsl / bash
- ...
+  "dev": "nodemon --legacy-watch index.js", // no windows | wsl| bash
 }
   
 ```
@@ -59,6 +60,9 @@ app  | Conexão com o banco de dados estabelecida com sucesso!
  - O banco de dados esta sendo salvo atráves de volume montado no $HOME no caso LINUX, consultar os dados no hots em: `~/volumes/mysql-data/`
 
 ``` yaml
+
+# in docker-compose.yml
+
 services:
   db:
     image: mysql:5.7
