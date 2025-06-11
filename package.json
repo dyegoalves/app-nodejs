@@ -1,0 +1,29 @@
+{
+  "name": "app-nodejs",
+  "version": "1.0.0",
+  "description": "Este projeto demonstra uma aplicação Node.js com MySQL e Nginx usando Docker Compose, com configuração do dockerize para esperar o banco de dados ficar disponível.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --legacy-watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyegoalves/app-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyegoalves/app-nodejs/issues"
+  },
+  "homepage": "https://github.com/dyegoalves/app-nodejs#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
